@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:Xam.App"
              x:Class="Xam.App.MainPage"
               BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             Title="MainPage"
+             Title="Weather"
              >
 
     <StackLayout  Padding="15">

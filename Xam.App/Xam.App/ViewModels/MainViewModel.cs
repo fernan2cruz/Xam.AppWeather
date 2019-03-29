@@ -17,6 +17,16 @@
 
     public class MainViewModel : BaseViewModel
     {
+        #region Constructor
+        public MainViewModel()
+        {
+            instance = this;
+            this.Apiservice = new Apiservice();
+            GetFromDataBase().GetAwaiter();
+            SearchString = string.Empty;
+        } 
+        #endregion
+
         #region Pattern Singleton
         private static MainViewModel instance;
 
@@ -85,19 +95,11 @@
 
         #endregion
 
-        #region Commads
-        public ICommand SearchCommand => new RelayCommand(Search);
-        public ICommand SelectCityCommand => new RelayCommand<WeatherHistoric>(x => SelectCity(x));
+        #region Commands
+        public ICommand SearchCommand => new RelayCommand(Search);        
         #endregion
 
-        public MainViewModel()
-        {
-            instance = this;
-            this.Apiservice = new Apiservice();
-            GetFromDataBase().GetAwaiter();
-            SearchString = string.Empty;
-        }
-
+        #region Private Methods
 
         private void Search()
         {
@@ -146,14 +148,8 @@
                 App.Current.MainPage.DisplayAlert("Error", e.Message, "OK");
 
             }
-        }
-
-        private void SelectCity(WeatherHistoric weatherHistoric)
-        {
-            SearchString = weatherHistoric.City;
-            
-        }
-        
+        } 
+        #endregion
 
     }
 }
