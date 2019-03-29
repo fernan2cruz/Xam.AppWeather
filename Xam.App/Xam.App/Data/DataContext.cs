@@ -5,7 +5,8 @@
     using System.Linq;
     using System.Threading.Tasks;    
     using SQLite;
-    using Xam.App.Data.Entities;    
+    using Xam.App.Data.Entities;
+    using Xam.App.ViewModels;
 
     public class DataContext
     {
@@ -24,11 +25,17 @@
             database.DeleteAsync(item).Wait();
         }
 
-        public async Task<IList<WeatherHistoric>> GetTodoItems()
+        public async Task<IOrderedEnumerable<HistoryItemVM>> GetTodoItems()
         {
-            var results = await database.QueryAsync<WeatherHistoric>("Select * from WeatherHistoric");
-
-            return results;
+            var results = await database.QueryAsync<HistoryItemVM>("Select * from WeatherHistoric");
+            var list = results.Select(x =>
+                                                                    new HistoryItemVM()
+                                                                    {
+                                                                        City = x.City,
+                                                                        LastConsultDate = x.LastConsultDate
+                                                                    }
+                                                                ).OrderByDescending(x => x.LastConsultDate.Value);
+            return list;
         }
 
         public void Insert(WeatherHistoric item)

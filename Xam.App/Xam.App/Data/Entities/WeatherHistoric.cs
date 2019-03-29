@@ -1,8 +1,8 @@
-﻿
-namespace Xam.App.Data.Entities
-{
+﻿namespace Xam.App.Data.Entities
+{    
     using SQLite;
-    using System;
+    using System;    
+
     public class WeatherHistoric
     {
         [PrimaryKey, AutoIncrement]
@@ -27,5 +27,6 @@ namespace Xam.App.Data.Entities
         }
         public DateTime? LastConsultDate { get; set; }
 
+      
     }
 }

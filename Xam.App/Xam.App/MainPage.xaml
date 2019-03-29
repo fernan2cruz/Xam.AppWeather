@@ -7,7 +7,7 @@
              Title="MainPage"
              >
 
-    <StackLayout >
+    <StackLayout  Padding="15">
         <StackLayout Orientation="Horizontal">
             <Entry Text="{Binding SearchString, Mode=TwoWay}" Placeholder="Busca tu ciudad" HorizontalOptions="FillAndExpand" />
             <Button Text="Go!"  Command="{Binding SearchCommand}"/>
@@ -38,18 +38,25 @@
             </Grid>
         </Frame>
         <ListView HasUnevenRows="True"
-                      ItemsSource="{Binding WeatherHistorics}">
+                  ItemsSource="{Binding WeatherHistorics}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <Frame CornerRadius="10"
                                HasShadow="true"
-                               Margin="5">
+                               Margin="5"
+                                >
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding SelectCityCommand}"/>
+                            </Frame.GestureRecognizers>
                             <Grid>
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto"></RowDefinition>
-                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"/>
+
+                                    <RowDefinition Height="Auto"/>
+
                                 </Grid.RowDefinitions>
+                                
 
                                 <Label FontAttributes="Bold"
                                        FontSize="Medium"  
@@ -57,7 +64,10 @@
                                        Text="{Binding City}"
                                        TextColor="DarkBlue">
                                 </Label>
-                                
+                                <Label Grid.Row="1"
+                                       Text="{Binding LastConsultDate}"
+                                       TextColor="Gray">
+                                </Label>
                             </Grid>
                         </Frame>
                     </ViewCell>

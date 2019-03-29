@@ -7,6 +7,7 @@
     using System.IO;
     using System.Linq;
     using System.Text;
+    using System.Threading.Tasks;
     using System.Windows.Input;
     using Entities;
     using GalaSoft.MvvmLight.Command;
@@ -30,10 +31,11 @@
         #endregion
 
         #region Attributes
-        private WeatherResponse weather;      
+        private WeatherResponse weather;
         private DataContext dataContext;
-        private ObservableCollection<WeatherHistoric> weatherhistory;
+        private ObservableCollection<HistoryItemVM> weatherhistory;
         private bool isbusy;
+        private string searchString;
         #endregion
 
         #region Properties
@@ -61,15 +63,19 @@
             set { this.SetValue(ref this.weather, value); }
 
         }
-        public ObservableCollection<WeatherHistoric> WeatherHistorics
+        public ObservableCollection<HistoryItemVM> WeatherHistorics
         {
             get { return this.weatherhistory; }
             set { this.SetValue(ref this.weatherhistory, value); }
         }
 
-        public Apiservice Apiservice; 
+        public Apiservice Apiservice;
 
-        public string SearchString { get; set; }
+        public string SearchString
+        {
+            get { return this.searchString; }
+            set { this.SetValue(ref this.searchString, value); }
+        }
         public string Endpoint = $"https://api.apixu.com/v1/current.json?key=2650fe6f342443ad98f01545192803";
         public bool isBusy
         {
@@ -80,39 +86,39 @@
         #endregion
 
         #region Commads
-        public ICommand SearchCommand => new RelayCommand(Search); 
+        public ICommand SearchCommand => new RelayCommand(Search);
+        public ICommand SelectCityCommand => new RelayCommand<WeatherHistoric>(x => SelectCity(x));
         #endregion
 
         public MainViewModel()
         {
             instance = this;
             this.Apiservice = new Apiservice();
-            GetFromDataBase();
+            GetFromDataBase().GetAwaiter();
+            SearchString = string.Empty;
         }
 
 
         private void Search()
         {
-            
+
             Apiservice.SearchWeather();
             InsertIntoDB();
-            GetFromDataBase();
+            GetFromDataBase().GetAwaiter();
         }
 
-        private void GetFromDataBase()
+        private async Task GetFromDataBase()
         {
+            try
+            {
+                var historyList = await DataContext.GetTodoItems();
+                this.WeatherHistorics = new ObservableCollection<HistoryItemVM>(historyList);
 
-            var historyList = DataContext.GetTodoItems()
-                                         .GetAwaiter()
-                                         .GetResult().Select(x =>
-                                                                new WeatherHistoric()
-                                                                {
-                                                                    City = x.FullNameCity,
-                                                                    LastConsultDate = x.LastConsultDate
-                                                                }
-                                                            );
-            this.WeatherHistorics = new ObservableCollection<WeatherHistoric>(historyList);
-            var test = "";
+            }
+            catch (Exception e)
+            {
+                await App.Current.MainPage.DisplayAlert("Error", e.Message, "OK");
+            }
         }
 
         private void InsertIntoDB()
@@ -129,9 +135,9 @@
                 {
                     City = Weather.location.name,
                     Country = Weather.location.country,
-                    LastConsultDate = DateTime.UtcNow                    
+                    LastConsultDate = DateTime.UtcNow
                 };
-                this.DataContext.Insert(history);                
+                this.DataContext.Insert(history);
 
             }
             catch (Exception e)
@@ -142,6 +148,12 @@
             }
         }
 
+        private void SelectCity(WeatherHistoric weatherHistoric)
+        {
+            SearchString = weatherHistoric.City;
+            
+        }
+        
 
     }
 }
