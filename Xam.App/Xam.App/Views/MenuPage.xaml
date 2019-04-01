@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ctrl="clr-namespace:Xam.App.Views.Controls"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"             
+             x:Class="Xam.App.Views.MenuPage"
+             Title="On the Menu">
+    <ContentPage.Content>
+        <StackLayout >
+            <StackLayout Orientation="Horizontal" HeightRequest="50" VerticalOptions="CenterAndExpand" >
+                <Label HorizontalTextAlignment="Center"  Text="Weak of July 1" />
+                <BoxView  VerticalOptions="Center" HorizontalOptions="Start" WidthRequest="1"  Color="Gray"/>
+
+                <Label HorizontalTextAlignment="Center"  Text="Weak of July 8" />
+                <BoxView  VerticalOptions="Center" HorizontalOptions="Start" WidthRequest="1"  Color="Gray"/>
+
+                <Label HorizontalTextAlignment="Center" Text="Weak of July 15" />
+                <BoxView  VerticalOptions="Center" HorizontalOptions="Start" WidthRequest="1"  Color="Gray"/>
+
+                <Label HorizontalTextAlignment="Center"  Text="Weak of July 22" />
+                
+            </StackLayout>
+            <Label             
+                   VerticalOptions="EndAndExpand">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Week of" FontSize="20" ForegroundColor="LightBlue" />
+                        <Span Text="July 1" FontSize="25" ForegroundColor="DarkBlue" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <AbsoluteLayout>
+                <ctrl:OnMenuItem 
+                     AbsoluteLayout.LayoutBounds="1,1,1,1"
+                     AbsoluteLayout.LayoutFlags="All"/>
+                <Button 
+                        AbsoluteLayout.LayoutBounds="0.5,0.90,0.60,0.1"
+                        AbsoluteLayout.LayoutFlags="All"
+                        BackgroundColor="Orange"
+                        CornerRadius="5"
+                        Padding="20,0"
+                        Text="Get Started"
+                        TextColor="White"
+                        />
+
+            </AbsoluteLayout>
+           
+        </StackLayout>
+        
+         
+    </ContentPage.Content>
+</ContentPage>

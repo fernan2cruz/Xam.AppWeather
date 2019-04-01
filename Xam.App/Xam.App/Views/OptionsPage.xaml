@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}" 
+             x:Class="Xam.App.Views.OptionsPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="buttonActionStyle" TargetType="Button">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BackgroundColor" Value="Blue" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Button
+                Command="{Binding WeatherAppCommand}"
+                Style="{StaticResource buttonActionStyle}"
+                Text="Weather App" />
+
+            <Button
+                Command="{Binding BlueApronAppCommand}"
+                Style="{StaticResource buttonActionStyle}"
+                Text="Blue Apron App" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

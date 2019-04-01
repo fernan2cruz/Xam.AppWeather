@@ -459,7 +459,6 @@ C:\repos\Xam.AppWeather\Xam.App\Xam.App.Android\obj\Debug\81\android\assets\Gala
 C:\repos\Xam.AppWeather\Xam.App\Xam.App.Android\obj\Debug\81\android\assets\GalaSoft.MvvmLight.Platform.dll
 C:\repos\Xam.AppWeather\Xam.App\Xam.App.Android\obj\Debug\81\android\assets\GalaSoft.MvvmLight.Platform.dll.mdb
 C:\repos\Xam.AppWeather\Xam.App\Xam.App.Android\obj\Debug\81\android\assets\Java.Interop.dll
-C:\repos\Xam.AppWeather\Xam.App\Xam.App.Android\obj\Debug\81\android\assets\machine.config
 C:\repos\Xam.AppWeather\Xam.App\Xam.App.Android\obj\Debug\81\android\assets\Mono.Android.dll
 C:\repos\Xam.AppWeather\Xam.App\Xam.App.Android\obj\Debug\81\android\assets\Mono.Android.pdb
 C:\repos\Xam.AppWeather\Xam.App\Xam.App.Android\obj\Debug\81\android\assets\Mono.Security.dll
@@ -554,9 +553,15 @@ C:\repos\Xam.AppWeather\Xam.App\Xam.App.Android\obj\Debug\81\android\assets\Xama
 C:\repos\Xam.AppWeather\Xam.App\Xam.App.Android\obj\Debug\81\android\assets\Xamarin.Forms.Xaml.pdb
 C:\repos\Xam.AppWeather\Xam.App\Xam.App.Android\obj\Debug\81\stamp\_BuildAdditionalResourcesCache.stamp
 C:\repos\Xam.AppWeather\Xam.App\Xam.App.Android\obj\Debug\81\stamp\_CleanIntermediateIfNuGetsChange.stamp
-C:\repos\Xam.AppWeather\Xam.App\Xam.App.Android\obj\Debug\81\stamp\_CompileToDalvik.stamp
 C:\repos\Xam.AppWeather\Xam.App\Xam.App.Android\obj\Debug\81\stamp\_CopyIntermediateAssemblies.stamp
 C:\repos\Xam.AppWeather\Xam.App\Xam.App.Android\obj\Debug\81\stamp\_CopyMdbFiles.stamp
 C:\repos\Xam.AppWeather\Xam.App\Xam.App.Android\obj\Debug\81\stamp\_CopyPdbFiles.stamp
-C:\repos\Xam.AppWeather\Xam.App\Xam.App.Android\obj\Debug\81\stamp\_GeneratePackageManagerJava.stamp
 C:\repos\Xam.AppWeather\Xam.App\Xam.App.Android\obj\Debug\81\stamp\_ResolveLibraryProjectImports.stamp
+C:\repos\Xam.AppWeather\Xam.App\Xam.App.Android\obj\Debug\81\res\drawable-hdpi\menu1.jpg
+C:\repos\Xam.AppWeather\Xam.App\Xam.App.Android\obj\Debug\81\res\drawable-hdpi\menu2.jpg
+C:\repos\Xam.AppWeather\Xam.App\Xam.App.Android\obj\Debug\81\res\drawable-hdpi\menu3.jpg
+C:\repos\Xam.AppWeather\Xam.App\Xam.App.Android\obj\Debug\81\android\assets\machine.config
+C:\repos\Xam.AppWeather\Xam.App\Xam.App.Android\obj\Debug\81\stamp\_CompileToDalvik.stamp
+C:\repos\Xam.AppWeather\Xam.App\Xam.App.Android\obj\Debug\81\stamp\_GeneratePackageManagerJava.stamp
+C:\repos\Xam.AppWeather\Xam.App\Xam.App.Android\obj\Debug\81\res\drawable-hdpi\recipeicon.png
+C:\repos\Xam.AppWeather\Xam.App\Xam.App.Android\obj\Debug\81\res\drawable-hdpi\menuicon.png

@@ -22,3 +22,8 @@ C:\repos\Xam.AppWeather\Xam.App\Xam.App\obj\Debug\netstandard2.0\Xam.App.Assembl
 C:\repos\Xam.AppWeather\Xam.App\Xam.App\obj\Debug\netstandard2.0\XamlC.stamp
 C:\repos\Xam.AppWeather\Xam.App\Xam.App\obj\Debug\netstandard2.0\Xam.App.dll
 C:\repos\Xam.AppWeather\Xam.App\Xam.App\obj\Debug\netstandard2.0\Xam.App.pdb
+C:\repos\Xam.AppWeather\Xam.App\Xam.App\obj\Debug\netstandard2.0\Views\Controls\OnMenuItem.xaml.g.cs
+C:\repos\Xam.AppWeather\Xam.App\Xam.App\obj\Debug\netstandard2.0\Views\MenuPage.xaml.g.cs
+C:\repos\Xam.AppWeather\Xam.App\Xam.App\obj\Debug\netstandard2.0\Views\OptionsPage.xaml.g.cs
+C:\repos\Xam.AppWeather\Xam.App\Xam.App\obj\Debug\netstandard2.0\Views\PrincipalTabPage.xaml.g.cs
+C:\repos\Xam.AppWeather\Xam.App\Xam.App\obj\Debug\netstandard2.0\Views\RecipesPage.xaml.g.cs

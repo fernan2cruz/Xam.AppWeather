@@ -29,12 +29,12 @@
         {
             var results = await database.QueryAsync<HistoryItemVM>("Select * from WeatherHistoric");
             var list = results.Select(x =>
-                                                                    new HistoryItemVM()
-                                                                    {
-                                                                        City = x.City,
-                                                                        LastConsultDate = x.LastConsultDate
-                                                                    }
-                                                                ).OrderByDescending(x => x.LastConsultDate.Value);
+                                          new HistoryItemVM()
+                                          {
+                                              City = x.City,
+                                              LastConsultDate = x.LastConsultDate
+                                          }
+                                     ).OrderByDescending(x => x.LastConsultDate.Value);
             return list;
         }
 
